@@ -4,11 +4,14 @@
 
 extern keymap_config_t keymap_config;
 
+
 #define _QWERTY 0
 #define _LOWER 1
 #define _RAISE 2
 #define _ADJUST 16
 #define KC_ KC_TRNS
+
+#define TAPPING_TERM 200
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
@@ -55,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      KC_LSFT, NO_LESS, KC_PGDN,   KC_F9,   KC_F10,  KC_F11,  KC_F12,         KC_SPC,  KC_N,    KC_1,  KC_2,    KC_3,    NO_APOS, KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     KC_,     KC_,      KC_,    KC_,     KC_,               KC_,              KC_,              KC_,    KC_0,    NO_SLSH, KC_DOWN, NO_PLUS
+     KC_,     KC_,      KC_,    KC_,     KC_,               KC_,              KC_,              KC_,    KC_,    KC_0,    NO_SLSH, KC_DOWN, NO_PLUS
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
   ),
 
@@ -88,7 +91,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-static uint16_t code_timer;
   switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
@@ -127,6 +129,9 @@ static uint16_t code_timer;
       }
       return false;
       break;
+  }
+  return true;
+   switch (keycode) {
    case KC_CCCV:                                  
      if(record->event.pressed){
        code_timer= timer_read();
@@ -136,6 +141,9 @@ static uint16_t code_timer;
        } else { 
          SEND_STRING("{");
        }
-      }
-  return true;
+     }
+     return true;
 }
+
+
+
