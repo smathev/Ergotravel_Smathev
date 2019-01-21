@@ -134,7 +134,7 @@ switch (keycode) {
        code_timer= timer_read();
      } else {
        if (timer_elapsed(code_timer) > TAPPING_TERM) {   // Hold, copy
-         SEND_STRING("{}"" SS_TAP(X_LEFT));
+         SEND_STRING("{}" SS_TAP(X_LEFT));
        } else { 
          SEND_STRING("{");
        }
