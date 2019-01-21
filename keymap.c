@@ -136,6 +136,6 @@ static uint16_t code_timer;
        } else { 
          SEND_STRING("{");
        }
-     }
+      }
   return true;
 }
