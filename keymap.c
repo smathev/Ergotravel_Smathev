@@ -11,8 +11,6 @@ extern keymap_config_t keymap_config;
 #define _ADJUST 16
 #define KC_ KC_TRNS
 
-#define TAPPING_TERM 200
-
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   LOWER,
