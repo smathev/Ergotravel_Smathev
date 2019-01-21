@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 static uint16_t code_timer;
 
-  switch (keycode) {
+switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
         #ifdef AUDIO_ENABLE
@@ -131,22 +131,19 @@ static uint16_t code_timer;
       }
       return false;
       break;
-  }
-  return true;
-   switch (keycode) {
-   case KC_CCCV:                                  
+    case KC_CCCV:                                  
      if(record->event.pressed){
        code_timer= timer_read();
      } else {
        if (timer_elapsed(code_timer) > TAPPING_TERM) {   // Hold, copy
-         SEND_STRING("{}" SS_TAP(X_LEFT));
+         SEND_STRING('{}' SS_TAP(X_LEFT));
        } else { 
-         SEND_STRING("{");
+         SEND_STRING('{');
        }
      }
-     return true;
+  }
+  return true;
 }
-}
-}
+
 
 
