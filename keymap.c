@@ -51,13 +51,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
   //,--------+--------+--------+--------+--------+--------+--------.        ,--------+--------+--------+--------+--------+--------+--------.
-     KC_GRV,  KC_1,    KC_PGUP,    KC_UP,    KC_4,    KC_5,    KC_DEL,             KC_B,    NO_MINS,    KC_7,    KC_8,    KC_9,    NO_ACUT,    KC_DEL,
+     KC_GRV,  KC_1,    KC_PGUP,  KC_UP,   KC_4,    KC_5,    KC_DEL,            KC_B,  NO_MINS,  KC_7,   KC_8,    KC_9,    NO_ACUT, KC_DEL,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     KC_TAB,  KC_HOME,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_END,   KC_F6,            KC_D,    NO_PLUS,    KC_4, KC_5,  KC_6, NO_QUOT, KC_PIPE,
+     KC_TAB,  KC_HOME, KC_LEFT,  KC_DOWN, KC_RGHT, KC_END,  _______,            KC_D,   NO_PLUS,  KC_4,   KC_5,    KC_6,   NO_QUOT, KC_PIPE,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     KC_LSFT, KC_F7,   KC_PGDN,   KC_F9,   KC_F10,  KC_F11,  KC_F12,           KC_SPC,  KC_N,    KC_1,    KC_2, KC_3,  NO_APOS, KC_ENT,
+     KC_LSFT, KC_F7,   KC_PGDN,   KC_F9,   KC_F10,  KC_F11,  KC_F12,           KC_SPC,  KC_N,    KC_1,   KC_2,    KC_3,   NO_APOS, KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     _______, _______, _______, _______,           LOWER,   KC_SPC,           KC_SPC,  RAISE,            KC_0, NO_SLSH,   KC_DOWN, NO_PLUS
+     _______, _______, _______, _______,           LOWER,  _______,          _______,  _______,          KC_0, NO_SLSH,   KC_DOWN, NO_PLUS
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
   ),
 
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_A,             KC_SPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     KC_LCTL, KC_LGUI, KC_LALT, ADJUST,           LOWER,   KC_SPC,           KC_SPC,  RAISE,            KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
+     _______, _______, _______, _______,           LOWER,   KC_SPC,           KC_SPC,  RAISE,            KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
   //`--------+--------+--------+--------+--------+--------+--------/        \--------+--------+--------+--------+--------+--------+--------'
   ),
 
