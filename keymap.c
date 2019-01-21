@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------+--------+--------+--------+--------+--------+--------.        ,--------+--------+--------+--------+--------+--------+--------.
      KC_GRV,  KC_1,    KC_PGUP,  KC_UP,   KC_4,    KC_5,    KC_DEL,          KC_B,    NO_MINS,  KC_7,   KC_8,    KC_9,    NO_ACUT, KC_DEL,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
-     KC_TAB,  KC_HOME, KC_LEFT,  KC_DOWN, KC_RGHT, KC_END, KC_,          KC_D,    NO_PLUS,  KC_4, KC_5,    KC_6,    NO_QUOT, KC_PIPE,
+     KC_TAB,  KC_HOME, KC_LEFT,  KC_DOWN, KC_RGHT, KC_END, KC_,               KC_D,    NO_PLUS,  KC_4, KC_5,    KC_6,    NO_QUOT, KC_PIPE,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
      KC_LSFT, NO_LESS, KC_PGDN,   KC_F9,   KC_F10,  KC_F11,  KC_F12,         KC_SPC,  KC_N,    KC_1,  KC_2,    KC_3,    NO_APOS, KC_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------+--------+--------|
@@ -84,10 +84,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 
 };
-
-
-
-
 
 
 
@@ -131,5 +127,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
       break;
   }
+   case KC_CCCV:                                  
+     if(record->event.pressed){
+       code_timer= timer_read();
+     } else {
+       if (timer_elapsed(code_timer) > TAPPING_TERM) {   // Hold, copy
+         SEND_STRING("{}" SS_TAP(X_LEFT));
+       } else { 
+         SEND_STRING("{");
+       }
+     }
   return true;
 }
