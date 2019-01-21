@@ -9,8 +9,6 @@ extern keymap_config_t keymap_config;
 #define _RAISE 2
 #define _ADJUST 16
 #define KC_ KC_TRNS
-#define _______ KC_TRNS
-
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
