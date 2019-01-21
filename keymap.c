@@ -127,7 +127,6 @@ static uint16_t code_timer;
       }
       return false;
       break;
-  }
    case KC_CCCV:                                  
      if(record->event.pressed){
        code_timer= timer_read();
