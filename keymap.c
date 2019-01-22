@@ -135,9 +135,9 @@ switch (keycode) {
        code_timer= timer_read();
      } else {
        if (timer_elapsed(code_timer) > TAPPING_TERM) { 
-         SEND_STRING("A" SS_TAP(X_LEFT));
+         SEND_STRING(SS_LALT("7") SS_LALT("0") SS_TAP(X_LEFT));
        } else { 
-         SEND_STRING("A");
+         SEND_STRING(SS_LALT("7"));
        }
      }
      return false;
